@@ -1,0 +1,82 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+*,*::before,*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+ul,ol,li{
+  list-style: none;
+}
+img{
+  vertical-align: top;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: inherit;
+  font-size: inherit;
+}
+html,body {
+  height: 100%;
+  line-height: 1;
+}
+button,input{
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+  font-family: inherit;
+}
+button{
+  cursor: pointer;
+  background-color: inherit;
+}
+
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+[class*="__container"] {
+  max-width: 1310px;
+  margin: 0px auto;
+  padding: 0px 15px;
+  overflow-wrap: break-word;
+}
+.main{
+  flex: 1 1 auto;
+}
+
+.gallery__items{
+  min-height: 550px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+}
+.gallery__item{
+  position: relative;
+  padding: 0px 0px 70% 0px;
+}
+.gallery__item img{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width:558px){
+  .gallery__item_big{
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+
+
