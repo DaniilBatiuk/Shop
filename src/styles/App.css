@@ -57,13 +57,13 @@ button{
 
 /* -------------------------------main__section__gallery------------------------------- */
 .gallery__items{
-  min-height: 550px;
+  min-height: 600px;
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
 }
 .gallery__item{
-  background-color: gray;
+  background-color: lightgray;
   position: relative;
   padding: 0px 0px 70% 0px;
 }
@@ -85,7 +85,6 @@ button{
     grid-row: span 2;
   }
 }
-
 @keyframes slide-in {
   0% {
     opacity: 0;
@@ -107,10 +106,14 @@ button{
   font-weight: bold;
   user-select: none;
 }
-
+@media (max-width:558px){
+  .gallery__image__text {
+    font-size: 37px;
+  }
+}
 /* -------------------------------header------------------------------- */
 .header__container{
-  margin-bottom: 100px;
+  margin-bottom: 90px;
   position: relative;
 }
 .header__content{
@@ -125,7 +128,7 @@ button{
   max-width: 1310px;
   width: 100%;
   margin: 0px auto;
-  padding: 0px 30px;
+  padding: 10px 30px;
 
 }
 .header__menu{
@@ -157,7 +160,7 @@ button{
 
 .menu__link{
   display: block;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.62;
 }
 .cart-header__text{
@@ -191,9 +194,6 @@ button{
   .header__content,
   .menu__list{
     column-gap:25px;
-  }
-  .header__content{
-    min-height: 90px;
   }
 }
 @media (max-width:767.98px){
@@ -279,7 +279,61 @@ button{
   .menu__link{
     font-size: 34px;
   }
-  .header__content{
-    min-height: 70px;
+}
+/* -------------------------------products proud------------------------------- */
+
+.title{
+  font-weight: 700;
+  font-size: 34px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.products-proud__row{
+  display: flex;
+}
+.products-proud__column{
+  flex:0 1 25%;
+}
+
+.products-proud__item{
+  display: grid;
+  grid-auto-flow: row;
+  grid-template: auto 1fr minmax(40px,auto) / 1fr;
+}
+.products-proud__image{
+  position: relative;
+  background-color: lightgray;
+  padding: 90px 0px 90% 0px;
+  margin: 0px 0px 20px 0px;
+}
+.products-proud__image img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  animation: slide-in 1s forwards;
+}
+.products-proud__items{
+  display: grid;
+  column-gap: 30px;
+  row-gap: 50px;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+}
+.products-proud__name{
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.products-proud__price{
+  font-size: 28px;
+  font-weight: 900;
+}
+@media (max-width:558px){
+  .title{
+    margin-top: 50px;
+    font-size: 28px;
   }
 }

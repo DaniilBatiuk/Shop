@@ -1,5 +1,5 @@
 import React from "react";
-import logo from '../photos/logo.jpg';
+import logo from '../photos/logo.PNG';
 function ShowMenu(e) {
     const targetItem = e.target;
     if (targetItem.closest('.icon-menu')) {
