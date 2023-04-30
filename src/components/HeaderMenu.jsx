@@ -1,5 +1,7 @@
 import React from "react";
 import logo from '../photos/logo.PNG';
+import { Link } from "react-router-dom";
+
 function ShowMenu(e) {
     const targetItem = e.target;
     if (targetItem.closest('.icon-menu')) {
@@ -11,17 +13,17 @@ function HeaderMenu() {
         <header className="header">
             <div className="header__container">
                 <div className="header__content">
-                    <a href="" className="header__logo">
+                    <Link to="/" className="header__logo">
                         <img src={logo} alt="" />
-                    </a>
+                    </Link>
                     <nav className="header__menu menu">
                         <div className="menu__body">
                             <ul className="menu__list">
                                 <li>
-                                    <a href="" className="menu__link">Categories</a>
+                                    <Link to="/Categories" className="menu__link">Categories</Link>
                                 </li>
                                 <li>
-                                    <a href="" className="menu__link">Product page</a>
+                                    <Link to="/" className="menu__link">Product page</Link>
                                 </li>
                             </ul>
                         </div>

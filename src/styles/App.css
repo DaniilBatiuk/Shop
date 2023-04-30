@@ -129,7 +129,6 @@ button{
   width: 100%;
   margin: 0px auto;
   padding: 10px 30px;
-
 }
 .header__menu{
   flex: 1 1 auto;
@@ -197,6 +196,9 @@ button{
   }
 }
 @media (max-width:767.98px){
+  .header__logo img{
+    width: 100px;
+  }
   .header__content,
   .menu__list{
     column-gap:15px;
@@ -325,6 +327,7 @@ button{
 .products-proud__name{
   font-size: 20px;
   margin-bottom: 20px;
+  height: 25px;
   font-weight: 600;
 }
 .products-proud__price{
