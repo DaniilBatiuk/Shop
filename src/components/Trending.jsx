@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { } from "react";
 import ProductCard from "./ProductCard";
 import chair3 from '../photos/chair3.jpg';
 import chair4 from '../photos/chair4.jpg';
@@ -24,31 +24,30 @@ const productList = [
     { photo: table4, title: "Corner table 120x80 Black", price: 225.99 }
 ];
 
+function Scroll(e){
+    e.currentTarget.scrollLeft += e.deltaY;
+};
+function ScrollLeft(){
+    const scrollConteiner = document.getElementById("scrollConteiner");
+    scrollConteiner.scrollLeft -= scrollConteiner.offsetWidth;
+};
+
+function ScrollRight(){
+    const scrollConteiner = document.getElementById("scrollConteiner");
+    scrollConteiner.scrollLeft += scrollConteiner.offsetWidth;
+};
 function Trending() {
-    const scrollContainerRef = useRef(null);
-
-    useEffect(() => {
-        const scrollContainer = scrollContainerRef.current;
-
-        if (scrollContainer) {
-            scrollContainer.addEventListener("wheel", (e) => {
-                e.preventDefault();
-                scrollContainer.scrollLeft += e.deltaY;
-            });
-        }
-    }, []);
-
     return (
         <section className="trending">
             <div className="trending__container">
                 <div className="trending__title__buttons">
                     <div className="trending__title title">Trending Now</div>
                     <div className="trending__buttons">
-                        <button className="trending__button">&#8592;</button>
-                        <button className="trending__button">&#8594;</button>
+                        <button className="trending__button" onClick={ScrollLeft}>&#129128;</button>
+                        <button className="trending__button" onClick={ScrollRight}>&#129130;</button>
                     </div>
                 </div>
-                <div className="trending__items" ref={scrollContainerRef}>
+                <div className="trending__items" id="scrollConteiner" onWheel={Scroll}>
                     {productList.map((elem) => (
                         <ProductCard key={elem.title} product={elem} />
                     ))}
